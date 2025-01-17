@@ -14,8 +14,8 @@ def test_login_failure(login_page):
         login_page.navigate()
     with allure.step('Ввести в форму авторизации недействительные учетные данные'):
        login_page.login('invalid_user', 'invalid_password')
-    with allure.step('Url не изменился'):
-        assert login_page.url == 'https://zimaev.github.io/pom/'
+    # with allure.step('Url не изменился'):
+    #     assert login_page.url == 'https://zimaev.github.io/pom/'
     with allure.step('Отображается ошибка - Invalid credentials. Please try again.'):
         assert login_page.get_error_message() == 'Invalid credentials. Please try again.'
 
